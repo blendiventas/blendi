@@ -1,0 +1,24 @@
+###INI HTDINA###
+
+###INICIO REWRITE RULES###
+RewriteEngine on
+
+###INICIO FORZAR www###
+RewriteCond %{HTTP_HOST} ^tpv-e.es [NC]
+RewriteRule ^(.*)$ https://www.tpv-e.es/$1 [L,R=301]
+###FIN FORZAR www###
+
+######INICIO NAVEGACION HTTPS######
+RewriteCond %{HTTPS} !=on [NC]
+RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+######FIN DE NAVEGACION HTTPS######
+
+###FIN DE REWRITE RULES###
+
+###FIN HTDINA###
+
+AddType image/svg+xml svg svgz
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?url=$1 [L]

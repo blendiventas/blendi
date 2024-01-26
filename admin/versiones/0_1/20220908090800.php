@@ -1,0 +1,6 @@
+<?php
+$result = $conn->query("DROP VIEW `comensales`;");
+$result = $conn->query("create view comensales_2022 AS select `d1`.`fecha_documento` AS `fecha_documento`,`d1`.`hora` AS `hora`,concat(`l`.`nombre`,' ',`l`.`apellido_1`,' ',`l`.`apellido_2`) AS `cliente`,`l`.`razon_comercial` AS `razon_comercial`,`d1`.`comensales` AS `comensales` from (`documentos_2022_1` `d1` join `libradores` `l` on((`d1`.`id_librador` = `l`.`id`)));");
+
+$result = $conn->query("DROP VIEW `salidas`;");
+$result = $conn->query("create view salidas_2022 AS select `d2`.`fecha` AS `fecha`,`d2`.`hora` AS `hora`,`p`.`descripcion` AS `producto`,`c`.`descripcion` AS `categoria`,`d2`.`cantidad` AS `cantidad`,`d2`.`coste` AS `coste`,(`d2`.`base_despues_descuento` / `d2`.`cantidad`) AS `importe_unidad`,`d2`.`base_despues_descuento` AS `importe_total`,concat(`l`.`nombre`,' ',`l`.`apellido_1`,' ',`l`.`apellido_2`) AS `cliente`,`l`.`razon_comercial` AS `razon_comercial` from ((((`documentos_2022_2` `d2` join `productos` `p` on((`d2`.`id_producto` = `p`.`id`))) join `productos_categorias` `pc` on((`p`.`id` = `pc`.`id_producto`))) join `categorias` `c` on((`pc`.`id_categoria` = `c`.`id`))) join `libradores` `l` on((`d2`.`id_librador` = `l`.`id`)));");

@@ -1,0 +1,23 @@
+###INI HTDINA###
+
+###INICIO REWRITE RULES###
+RewriteEngine on
+
+###INICIO FORZAR www###
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^tpvblendi.test:8080 [NC]
+RewriteRule ^(.*)$ http://www.tpvblendi.test:8080/admin/$1 [R=301,L]
+###FIN FORZAR www###
+
+######INICIO NAVEGACION HTTPS######
+#RewriteCond %{HTTPS} !=on [NC]
+#RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+######FIN DE NAVEGACION HTTPS######
+
+###FIN DE REWRITE RULES###
+
+###FIN HTDINA###
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^(.*)$ admin/index.php?url=$1 [L]

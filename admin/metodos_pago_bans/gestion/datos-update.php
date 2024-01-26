@@ -1,0 +1,17 @@
+<?php
+header('Content-Type: application/json');
+$id_sesion_sys = filter_input(INPUT_POST, 'id_sesion', FILTER_SANITIZE_STRING);
+$ip_sys = filter_input(INPUT_POST, 'ip', FILTER_SANITIZE_STRING);
+$id_panel_sys = filter_input(INPUT_POST, 'id_panel', FILTER_SANITIZE_NUMBER_INT);
+$id_idioma_sys = filter_input(INPUT_POST, 'id_idioma', FILTER_SANITIZE_NUMBER_INT);
+$select_sys = filter_input(INPUT_POST, 'select', FILTER_SANITIZE_STRING);
+$id_metodos_pago_bans = filter_input(INPUT_POST, 'id_metodos_pago_bans', FILTER_SANITIZE_NUMBER_INT);
+$id_idioma_metodos_pago_bans = filter_input(INPUT_POST, 'id_idioma_metodos_pago_bans', FILTER_SANITIZE_NUMBER_INT);
+$id_metodo_pago_metodos_pago_bans = $_POST['id_metodo_pago_metodos_pago_bans'];
+$correo_metodos_pago_bans = $_POST['correo_metodos_pago_bans'];
+
+$ajax_sys = true;
+
+require($_SERVER['DOCUMENT_ROOT']."/assets/conn/ddbb.php");
+
+require($_SERVER['DOCUMENT_ROOT']."/admin/metodos_pago_bans/gestion/datos-update-php.php");

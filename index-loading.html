@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: gray;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            display: none;
+        }
+
+        .loading--show {
+            display: flex;
+        }
+    </style>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Lista de urls que deseas precargar
+            const LIST_IMAGES_PRELOAD = Array.from(document.images);
+            // Elemento visual del loading
+            const LOADING = document.querySelector('.loading');
+            // Tiempo de espera entre revisiones en ms
+            const SLEEP_CHECK = 50;
+
+            // Herramienta para esperar un tiempo determinado en una función asíncrona
+
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            // Comprueba de forma recursiva si todas las imágenes se han completado
+            // Si todas estan descargadas, quitará la clase 'loading--show' a 'loading' para ocultarlo
+
+            async function checkIfAllImagesCompleted() {
+                // Obtiene todas las imágenes sin completar
+                const NO_COMPLETES = LIST_IMAGES_PRELOAD.filter((img) => {
+                    return !img.complete;
+                });
+
+                if (NO_COMPLETES.length !== 0) {
+                    // Vuelve a iterar si existe alguna sin completar
+                    await sleep(SLEEP_CHECK);
+                    return checkIfAllImagesCompleted();
+                } else {
+                    // Oculta el loading
+                    LOADING.classList.remove('loading--show');
+                }
+                return true;
+            }
+
+            // Inicia
+            checkIfAllImagesCompleted();
+        });
+    </script>
+</head>
+<body>
+    <!-- Loading -->
+    <div class="loading loading--show">Cargando imágenes</div>
+
+    <!--Contenido -->
+    <h1>Web cargada!!!</h1>
+    <p><img src="https://www.tpv-e.es/images/logo_cuidatumusica_300.jpg"></p>
+    <p><img src="https://www.tpv-e.es/images/imagen_principal.gif"></p>
+</body>
+</html>

@@ -1,0 +1,7 @@
+[type='text'], [type='email'], [type='url'], [type='password'], [type='number'], [type='date'], [type='datetime-local'], [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'], [multiple], textarea, select {
+    background-color: #3e434c !important;
+    color: white !important;
+}
+[type='text']::placeholder, [type='email']::placeholder, [type='url']::placeholder, [type='password']::placeholder, [type='number']::placeholder, [type='date']::placeholder, [type='datetime-local']::placeholder, [type='month']::placeholder, [type='search']::placeholder, [type='tel']::placeholder, [type='time']::placeholder, [type='week']::placeholder, [multiple]::placeholder, textarea::placeholder, select::placeholder {
+    color: white !important;
+}

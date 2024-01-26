@@ -1,0 +1,13 @@
+#logo-principal {
+    width: 350px;
+}
+#logos-cabecera {
+    width: 100px;
+}
+.menu_superior {
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: .2rem;
+}

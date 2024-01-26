@@ -1,0 +1,3 @@
+<?php
+$result = $conn->query("DROP VIEW `articulos`;");
+$result = $conn->query("CREATE VIEW articulos AS select `p`.`id` AS `Id articulo`,`p`.`descripcion` AS `articulos`,`u`.`abreviatura` AS `Unidad`,`p`.`peso_bruto` AS `Peso bruto`,`p`.`peso_neto` AS `Peso neto`,`p`.`coste` AS `Coste`, t.descripcion AS Tarifa, pp.pvp AS PVP from ((`productos` `p` join `productos_unidades` `pu` on((`p`.`id` = `pu`.`id_producto`))) join `unidades` `u` on((`pu`.`id_unidad` = `u`.`id`))) JOIN productos_pvp pp ON pp.id_producto = `p`.`id` JOIN tarifas t ON pp.id_tarifa = t.id where (`pu`.`principal` = 1) ORDER BY articulos;");

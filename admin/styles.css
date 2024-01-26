@@ -1,0 +1,114 @@
+*::-webkit-scrollbar {
+    width: 6px;     /* Tamaño del scroll en vertical */
+    height: 6px;    /* Tamaño del scroll en horizontal */
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+*::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambiamos el fondo cuando esté en active */
+*::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* Imagen configuración inicial */
+#logo_blendi_vector {
+    width: 354px;
+    height: 237px;
+}
+
+/* Vector 108 */
+#config-inicial-vector-108 {
+    position: absolute;
+    width: 354px;
+    height: 156px;
+    left: 0;
+    top: 80px;
+    z-index: -1;
+}
+
+/* Group 74 */
+#config-inicial-group-74 {
+    position: absolute;
+    width: 62px;
+    height: 80px;
+    left: 241px;
+    top: 84px;
+}
+
+/* taco */
+#config-inicial-taco {
+    position: absolute;
+    width: 109px;
+    height: 81px;
+    left: 109px;
+    top: 66px;
+}
+
+/* lettuce-2 */
+#config-inicial-lettuce-2 {
+    position: absolute;
+    width: 71px;
+    height: 90px;
+    left: 14px;
+    top: 78px;
+}
+
+/* Group 1033 */
+#config-inicial-group-1033 {
+    position: absolute;
+    width: 53px;
+    height: 82px;
+    left: 91px;
+    top: 138px;
+}
+
+/* Group 47 */
+#config-inicial-group-47 {
+    position: absolute;
+    width: 77px;
+    height: 56px;
+    left: 190px;
+    top: 151px;
+}
+
+/* Group 1036 */
+#config-inicial-group-1036 {
+    position: absolute;
+    width: 128px;
+    height: 62px;
+    left: 213px;
+    top: 0px;
+}
+
+/* FIN - Imagen configuración inicial */
+
+
+.progress {
+    height: 10px;
+    width: 100%;
+    border: 1px solid #156772;
+    border-radius: 5px;
+    background-color: #e6f3fa;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #156772;
+    display: flex;
+    align-items: center;
+    transition: width 0.25s;
+    border-radius: 5px;
+}

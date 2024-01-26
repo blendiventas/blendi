@@ -1,0 +1,10 @@
+.idea
+Arxius-web-cuidatumusica
+Dades-Pau
+Datos
+Estructura-dades
+Traspasar_datos
+enviar_mails/ficheros/*
+!enviar_mails/ficheros/control.txt
+!enviar_mails/ficheros/tmp/control.txt
+copia

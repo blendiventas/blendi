@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+<script type="application/javascript">
+    const socket = io("blendinotifications.es:9000");
+
+    let sendMessage = function (panel, terminal, message) {
+        console.log('SendMessage: Socket not connected');
+    }
+    let assignPanelAndTerminal = function (panel, terminal) {
+        console.log('AssignPanelAndTerminal: Socket not connected');
+    }
+
+    socket.on("connect", () => {
+        console.log(socket.id);
+
+        sendMessage = function (panel, terminal, message) {
+            // send a message to the server
+            socket.emit("sendMessage", panel, terminal, message);
+        }
+        assignPanelAndTerminal = function (panel, terminal) {
+            // assign panel and terminal to the server
+            socket.emit("assignPanelAndTerminal", panel, terminal);
+        }
+
+        // receive a message from the server
+        socket.on("newMessage", (...args) => {
+            console.log('New message');
+            console.log(args);
+        });
+    });
+</script>
+</body>
+</html>

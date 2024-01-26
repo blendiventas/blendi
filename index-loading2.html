@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: gray;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            display: none;
+        }
+
+        .loading--show {
+            display: flex;
+        }
+    </style>
+    <script>
+        function ready() {
+            document.getElementById("loading").style.display = "none";
+        }
+
+        document.addEventListener("DOMContentLoaded", setTimeout("ready()",1000));
+    </script>
+</head>
+<body>
+    <!-- Loading -->
+    <div class="loading loading--show" id="loading">Cargando imágenes</div>
+
+    <!--Contenido -->
+    <h1>Web cargada!!!</h1>
+    <p><img src="https://www.tpv-e.es/images/logo_cuidatumusica_300.jpg"></p>
+    <p><img src="https://www.tpv-e.es/images/imagen_principal.gif"></p>
+</body>
+</html>

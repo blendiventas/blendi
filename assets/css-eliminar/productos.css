@@ -1,0 +1,26 @@
+.img-productos {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+}
+.card_productos {
+    height: 550px!important;
+    border: none;
+}
+.car-body-productos {
+    max-height: 50%;
+}
+.disponibilidad-productos {
+    width: 33%;
+    height: 100%;
+    object-fit: cover;
+}
+.car-text-productos-center {
+    text-align: center;
+}
+.car-text-productos-left {
+    text-align: left;
+}
+.car-text-productos-right {
+    text-align: right;
+}
